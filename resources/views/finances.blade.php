@@ -1,43 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.user')
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Finances</title>
-  <link rel="stylesheet" href="../../../public/Styles/Student_POV.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="../../../public/Styles/style.js"></script>
-</head>
-</head>
+@section('content')
 
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="../../../public/Assets/Images/logo.png" alt="Logo" class="logo-img">
-    </div>
-    <div class="container">
-
-      <button class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <ul class="nav-links">
-        <li><a href="1.1 home.blade.php">Home</a></li>
-        <li><a href="1.2 finances.blade.php">Finance</a></li>
-        <li><a href="1.3 courses.blade.php">Courses</a></li>
-        <li><a href="1.4 petition.blade.php">Petition</a></li>
-        <li><a href="1.5 FAQ.blade.php">FAQ</a></li>
-      </ul>
-    </div>
-
-    <div class="search-wrapper">
-      <div class="search-container">
-        <input type="text" placeholder="Search...">
-        <button type="submit"><i class="fas fa-search"></i></button>
-      </div>
-    </div>
-  </nav>
 
   <div class="signup-container">
     <form class="signup-form">
@@ -82,3 +47,4 @@
 </footer>
 
 </html>
+@endsection

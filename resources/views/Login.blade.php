@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,16 +14,17 @@
       content="Canadian International College Advising System"
     />
     <title>Login</title>
-    <link rel="stylesheet" href="../../../public/Styles/Login_style.css" />
+    <link href="{{ asset('Styles/Login_style.css') }}" rel="stylesheet">
   </head>
 
   <body>
     <div class="login-container">
-      <form class="login-form">
+    <form class="login-form" action="{{ route('login') }}" method="POST">
+        @csrf <!-- CSRF token -->
         <h2>Log in</h2>
         <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required />
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" required />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -33,7 +38,7 @@
           <select id="role" name="role" required>
             <option value="">Select Role</option>
             <option value="student">Student</option>
-            <option value="instructor">Instructor</option>
+            <option value="ta">TA</option> <!-- Changed 'instructor' to 'ta' -->
           </select>
         </div>
         <button type="submit">Sign In</button>
@@ -41,3 +46,4 @@
     </div>
   </body>
 </html>
+@endsection
