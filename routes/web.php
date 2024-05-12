@@ -19,6 +19,10 @@ Route::get('/Login',function(){
     return view('Login');
 });
 
+Route::get('/forgot_password',function(){
+    return view('forgot_password');
+})->name('forgot_password');
+
 Route::get('/finances', function () {
     return view('finances');
 })->name('finances');
@@ -80,7 +84,5 @@ Route::post('/course-info', [CourseController::class, 'createCourse'])->name('co
 
 
 
-Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
-Route::delete('/courses', [CourseController::class, 'destroy'])->name('courses.destroy');
 
 

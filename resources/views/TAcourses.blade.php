@@ -11,13 +11,6 @@
     </a>
 
     <!-- Use a form to delete courses -->
-    <form method="POST" action="{{ route('courses.destroy') }}">
-        @csrf
-        @method('DELETE')
-
-        <button type="submit" class="delete-button">Delete Course</button>
-
-    </form>
 
     <table>
         <thead>

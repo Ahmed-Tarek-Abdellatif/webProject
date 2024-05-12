@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Reset Password" />
-    <meta
-      name="keywords"
-      content="reset password, forgot password, password recovery"
-    />
-    <title>Reset Password</title>
-    <link rel="stylesheet" href="../../../public/Styles/Login_style.css" />
-  </head>
+@extends('layouts.app')
+
+@section('content')
 
   <body>
     <div class="reset-password-container">
@@ -26,3 +16,4 @@
     </div>
   </body>
 </html>
+@endsection

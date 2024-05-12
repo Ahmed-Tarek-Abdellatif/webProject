@@ -2,20 +2,7 @@
 
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Stylish and cool login page" />
-    <meta name="keywords" content="login, sign in, authentication" />
-    <meta
-      name="author"
-      content="Canadian International College Advising System"
-    />
-    <title>Login</title>
-    <link href="{{ asset('Styles/Login_style.css') }}" rel="stylesheet">
-  </head>
+
 
   <body>
     <div class="login-container">
@@ -31,7 +18,7 @@
           <input type="password" id="password" name="password" required />
         </div>
         <div class="forgot-password">
-          <a href="forgot_password.blade.php">Forgot Password?</a>
+          <a href="{{route('forgot_password')}}">Forgot Password?</a>
         </div>
         <div class="form-group">
           <label for="role">Role</label>
