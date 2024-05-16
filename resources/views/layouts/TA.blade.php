@@ -26,6 +26,7 @@
                 <li><a href="{{ route('TAmain') }}">Home</a></li>
                 <li><a href="{{ route('TAcourses') }}">Courses</a></li>
                 <li><a href="{{ route('Regstd') }}">Register Student</a></li>
+                <li><a href="{{ route('students.index') }}">Edit Student</a></li>
                 <li><a href="{{ route('TAfaq') }}">FAQ</a></li>
                 <li><a href="{{ route('logout') }}">Logout</a></li>
             </ul>

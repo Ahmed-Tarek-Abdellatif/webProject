@@ -36,6 +36,37 @@ class StudentController extends Controller
     }
 
 
+    public function showAllStudents()
+    {
+        $students = Student::all();
+        return view('stdedit', compact('students'));
+    }
+
+    public function stdedit($id)
+    {
+        $student = Student::findOrFail($id);
+        return view('stdedit', compact('student'));
+    }
+
+    public function stdupdate(Request $request, $id)
+    {
+        $student = Student::findOrFail($id);
+
+        $validatedData = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|string|max:255|email',
+            // Add validation rules for other fields as needed
+        ]);
+        $student->setAttribute('First name', $validatedData['first_name']);
+        $student->setAttribute('Last name', $validatedData['last_name']);
+        $student->setAttribute('Email', $validatedData['email']);
+
+        $student->save();
+
+        return redirect()->route('students.index')->with('success', 'Student information updated successfully!');
+    }
+
 
 
 
@@ -77,7 +108,8 @@ class StudentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $student = Student::findOrFail($id);
+        return view('applyedit', compact('student'));
     }
 
     /**

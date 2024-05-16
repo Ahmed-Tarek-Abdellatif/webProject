@@ -27,7 +27,7 @@
             @foreach ($courses as $course)
             <tr>
                 <td>{{ $course->getAttribute('Course name') }}</td>
-                <td>{{ $course->getAttribute('Instructor') }}</td>
+                <td>{{ $course->getAttribute('Insturctors') }}</td>
                 <td>{{ $course->getAttribute('Major') }}</td>
                 <td>{{ $course->getAttribute('Credit hours') }}</td>
                 <td><input type="checkbox" name="course_ids[]" value="{{ $course->id }}"></td>

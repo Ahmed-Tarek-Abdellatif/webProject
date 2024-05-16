@@ -11,15 +11,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/main',function(){
+Route::get('/main', function () {
     return view('main');
 })->name('main');
 
-Route::get('/Login',function(){
+Route::get('/Login', function () {
     return view('Login');
 });
 
-Route::get('/forgot_password',function(){
+Route::get('/forgot_password', function () {
     return view('forgot_password');
 })->name('forgot_password');
 
@@ -39,23 +39,31 @@ Route::get('/faq', function () {
     return view('faq');
 })->name('faq');
 
-Route::get('/TAmain',function(){
+Route::get('/TAmain', function () {
     return view('TAmain');
 })->name('TAmain');
 
-Route::get('/TAcourses',function(){
+Route::get('/TAcourses', function () {
     return view('TAcourses');
 })->name('TAcourses');
 
-Route::get('/Regstd',function(){
+Route::get('/Regstd', function () {
     return view('Regstd');
 })->name('Regstd');
 
-Route::get('/TAfaq',function(){
+Route::get('/stdedit', function () {
+    return view('stdedit');
+})->name('stdedit');
+
+Route::get('/applyedit', function () {
+    return view('applyedit');
+})->name('applyedit');
+
+Route::get('/TAfaq', function () {
     return view('TAfaq');
 })->name('TAfaq');
 
-Route::get('/Regcourse',function(){
+Route::get('/Regcourse', function () {
     return view('Regcourse');
 })->name('Regcourse');
 // Remove duplicate root route definition
@@ -82,7 +90,10 @@ Route::post('/Regstd', [StudentController::class, 'register'])->name('register')
 Route::get('/course-info', [CourseController::class, 'showCourseInfoForm'])->name('course.info');
 Route::post('/course-info', [CourseController::class, 'createCourse'])->name('course.create');
 
+Route::get('/stdedit', [StudentController::class, 'showAllStudents'])->name('students.index');
 
 
 
-
+Route::get('/{id}/stdedit', [StudentController::class, 'stdedit'])->name('students.edit');
+Route::get('/studentedit/{id}', [StudentController::class, 'edit'])->name('student.edit');
+Route::post('/applyedit/{id}', [StudentController::class, 'stdupdate'])->name('students.update');
